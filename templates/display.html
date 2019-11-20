@@ -1,0 +1,55 @@
+<h1>Electricity board of India</h1>
+
+Email:
+{{ e }}<br>
+
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <meta charset="UTF-8">
+   
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body style="background-color:powderblue;">
+    {% csrf_token %}
+<br>
+<br>
+<table style="width:100%">
+  <tr>
+    <th>Name of User  </th>
+    <th>Address</th> 
+    <th>Number of units</th>
+    <th>Amount</th> 
+  </tr>
+  <tr>
+    <th>User1  </th>
+    <th>Sricity</th> 
+    <th>100</th>
+    <th>Rs 500</th> 
+  </tr>
+  <tr>
+    <th>User2</th>
+    <th>Sricity</th>
+    <th>100</th>
+    <th>Rs 750</th> 
+        
+  </tr>
+ 
+</table>
+
+<br>
+<br>
+<button onclick="goBack()">Logout</button>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+</body>
+</html>

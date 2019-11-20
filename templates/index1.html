@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+   <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=displaywidth,initial-scale=1.0">
+        <meta name="author" content="KC">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <style>                   
+            .login-page {
+            width: 360px;
+            padding: 8% 0 0;
+            margin: auto;
+            }
+            .form {
+            position: relative;
+            z-index: 1;
+            background:rgb(61, 59, 59);
+            max-width: 65%;
+            margin: 150px auto 150px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            }
+            .form input {
+            font-family: sans-serif;
+            outline: 0;
+            background : white;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+            }
+            .form .submit {
+            font-family: sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            background: #4CAF50;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            cursor: pointer;
+            }
+            .textbox{
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid  black;
+}
+.textbox i{
+  width: 26px;
+  float: left;
+  text-align: center;
+}
+.textbox input{
+  border: none;
+  outline: none;
+  background :none;
+  color:whitesmoke;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+}
+            .form .submit:hover,.form .submit:active,.form .submit:focus {
+            background: #43A047;
+            }
+        </style>
+</head>
+<body style="background-image: url(static/images/4.jpg);max-height:300%;max-width:100%;background-attachment: fixed;background-size:cover;background-repeat:no-repeat;background-position: center center;text-align:center;background-color:black;">
+    <img src="static/images/images.png " style="float:left;max-width:20%;max-height:20%;">
+
+    
+        <div class="login-page">
+                <div class="form">
+                    <form class="login-form" action="/display/" method="POST">
+                        {% csrf_token %}
+                        <div class="textbox" >
+                            <i class="fas fa-user"></i>
+                            <input type="email" placeholder="email" name="emailid"/>
+                        </div>
+                       <div class="textbox" >
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="password" name="password"/>
+                       </div>
+                       
+                        <input class="submit" type="submit" value="Sign in"/>
+                    </form>
+                </div>
+            </div>
+</body>
+</html>
